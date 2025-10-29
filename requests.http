@@ -1,0 +1,46 @@
+### Abstractive Text Summarization API - Test Requests
+
+@baseUrl = http://localhost:5000
+
+### Health Check - Get API Docs
+GET {{baseUrl}}/docs
+
+### Test 1: Simple Text Summarization
+POST {{baseUrl}}/summarize
+Content-Type: application/json
+
+{
+  "text": "Machine learning is an important component of the growing field of data science. Through the use of statistical methods, algorithms are trained to make classifications or predictions, uncovering key insights within data mining projects. These insights subsequently drive decision making within applications and businesses, ideally impacting key growth metrics. As big data continues to expand and grow, the market demand for data scientists will increase, requiring them to assist in the identification of the most relevant business questions and subsequently the data to answer them."
+}
+
+### Test 2: Short Text
+POST {{baseUrl}}/summarize
+Content-Type: application/json
+
+{   
+  "text": "AI is great."
+}
+
+### Test 3: Empty Text (Should Return 400 Error)
+POST {{baseUrl}}/summarize
+Content-Type: application/json
+
+{
+  "text": ""
+}
+
+### Test 5: Whitespace Only (Should Return 400 Error)
+POST {{baseUrl}}/summarize
+Content-Type: application/json
+
+{
+  "text": "   "
+}
+
+### Test 6: Very Long Text
+POST {{baseUrl}}/summarize
+Content-Type: application/json
+
+{
+  "text": "The development of artificial intelligence has been one of the most significant technological advances of the 21st century. From natural language processing to computer vision, AI systems are now capable of performing tasks that were once thought to be exclusively within the domain of human intelligence. Machine learning, a subset of AI, has enabled computers to learn from data without being explicitly programmed. Deep learning, which uses neural networks with multiple layers, has achieved remarkable success in various applications. Transformers, a type of neural network architecture, have revolutionized natural language processing and are the foundation of large language models like GPT and BERT. These models can understand and generate human language with impressive accuracy. However, AI also raises important ethical and societal questions. Issues such as bias in AI systems, privacy concerns, and the potential for job displacement need to be carefully addressed. Researchers and policymakers are working to develop responsible AI practices and regulations. The future of AI will likely involve more sophisticated models, better integration with other technologies, and increased focus on ethical considerations."
+}

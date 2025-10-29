@@ -14,6 +14,8 @@ class config:
 
     learning_rate = 0.0001
 
+    use_gpu = False
+
     # T5 transfromer
     t5_model_path = "t5-base"
 

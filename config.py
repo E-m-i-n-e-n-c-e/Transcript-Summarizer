@@ -9,8 +9,8 @@ class config:
 
     dataset_path = "./data/news_summary.csv"
 
-    text_token_max_length = 512
-    summary_token_max_length = 128
+    text_token_max_length = 1024
+    summary_token_max_length = 256
 
     learning_rate = 0.0001
 
